@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @tembi kelvin
-- 👀 I’m interested in network security, full stack
-- 🌱 I’m currently learning php
+- 👀 I’m interested in network security, full stack, cyber security, bug bounty
+- 🌱 I’m currently learning Nodejs
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...
 
