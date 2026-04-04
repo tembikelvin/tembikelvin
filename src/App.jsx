@@ -32,7 +32,7 @@ function App() {
           background: 'linear-gradient(90deg, var(--primary), #00d4ff)',
           transformOrigin: '0%',
           scaleX: scrollYProgress,
-          zIndex: 100,
+          zIndex: 999,
           boxShadow: '0 0 10px rgba(0, 212, 255, 0.5)'
         }}
       />
