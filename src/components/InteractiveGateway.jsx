@@ -107,8 +107,8 @@ export default function InteractiveGateway({ children, isUnlocked, setIsUnlocked
                  whileHover={{ scale: 1.05 }}
                  whileTap={{ scale: 0.95, cursor: 'grabbing' }}
                  style={{
-                   width: '54px',
-                   height: '54px',
+                   width: '50px',
+                   height: '50px',
                    background: 'linear-gradient(135deg, var(--primary), #00d4ff)',
                    borderRadius: '50%',
                    display: 'flex',
@@ -117,8 +117,7 @@ export default function InteractiveGateway({ children, isUnlocked, setIsUnlocked
                    cursor: 'grab',
                    position: 'relative',
                    zIndex: 10,
-                   boxShadow: '0 10px 20px rgba(0, 71, 255, 0.3)',
-                   border: '2px solid rgba(255, 255, 255, 0.2)'
+                   boxShadow: 'var(--shadow-blue)'
                  }}
               >
                 <LockOpenIcon style={{ width: '24px', height: '24px', color: 'white' }} />
