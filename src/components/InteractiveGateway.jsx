@@ -57,7 +57,7 @@ export default function InteractiveGateway({ children, isUnlocked, setIsUnlocked
 
             {/* The Drag Track */}
             <div style={{
-              width: '340px',
+              width: 'min(340px, 90vw)',
               height: '70px',
               background: 'var(--surface-elevated)',
               borderRadius: '99px',
@@ -100,7 +100,10 @@ export default function InteractiveGateway({ children, isUnlocked, setIsUnlocked
               {/* The Draggable Thumb */}
               <motion.div
                  drag="x"
-                 dragConstraints={{ left: 0, right: 260 }}
+                 dragConstraints={{ 
+                   left: 0, 
+                   right: typeof window !== 'undefined' ? Math.min(260, window.innerWidth * 0.9 - 70) : 260 
+                 }}
                  dragElastic={0.1}
                  onDragEnd={handleDragEnd}
                  animate={controls}

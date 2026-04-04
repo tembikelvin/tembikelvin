@@ -40,6 +40,13 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+}
+
 body {
   font-family: var(--font-main);
   background-color: var(--bg-color);
@@ -108,7 +115,7 @@ button {
   display: none !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .nav-desktop {
     display: none !important;
   }
