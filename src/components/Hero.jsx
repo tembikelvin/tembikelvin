@@ -28,7 +28,7 @@ export default function Hero() {
           <h1 className="heading-xl">
             Hi, I'm Tabe Kervine.<br/>
             I build <span className="text-gradient">secure applications.</span>
-            <span className="cursor-blink">|</span>
+            <span className="cursor-blink">█</span>
           </h1>
           
           <p className="text-lead">
