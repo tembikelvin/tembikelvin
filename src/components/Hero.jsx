@@ -2,11 +2,18 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
 import HeroParticles from './HeroParticles';
 
-export default function Hero() {
+export default function Hero({ isUnlocked, onWorkClick }) {
   const { scrollY } = useScroll();
   const yText = useTransform(scrollY, [0, 500], [0, 80]);
   const opacity = useTransform(scrollY, [0, 400], [1, 0.2]); // Don't fade out completely
   const yImage = useTransform(scrollY, [0, 800], [0, -100]);
+
+  const handleWorkClick = (e) => {
+    if (!isUnlocked) {
+      e.preventDefault();
+      onWorkClick();
+    }
+  };
 
   return (
     <section className="section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '120px', position: 'relative' }}>
@@ -43,7 +50,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
             style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
           >
-            <a href="#work" className="btn btn-primary">
+            <a href="#work" onClick={handleWorkClick} className="btn btn-primary">
               View My Work <ArrowRight size={20} />
             </a>
             <a href="/Tabe%20Kervine%20Tembi%20CV.pdf" download className="btn btn-secondary">

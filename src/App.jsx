@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, useScroll } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -12,6 +12,12 @@ import './index.css';
 
 function App() {
   const { scrollYProgress } = useScroll();
+  const [isUnlocked, setIsUnlocked] = useState(false);
+  const gatewayRef = useRef(null);
+
+  const scrollToGateway = () => {
+    gatewayRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div style={{ position: 'relative' }}>
@@ -32,14 +38,16 @@ function App() {
       />
       
       <Navbar />
-      <Hero />
+      <Hero isUnlocked={isUnlocked} onWorkClick={scrollToGateway} />
       
-      <InteractiveGateway>
-        <Experience />
-        <Projects />
-        <Testimonials />
-        <Contact />
-      </InteractiveGateway>
+      <div ref={gatewayRef}>
+        <InteractiveGateway isUnlocked={isUnlocked} setIsUnlocked={setIsUnlocked}>
+          <Experience />
+          <Projects />
+          <Testimonials />
+          <Contact />
+        </InteractiveGateway>
+      </div>
       
       <footer style={{ background: 'var(--surface-elevated)', padding: '4rem 0', borderTop: '1px solid var(--border-color)', textAlign: 'center', marginTop: '4rem' }}>
         <div className="container">
