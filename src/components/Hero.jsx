@@ -76,7 +76,7 @@ export default function Hero() {
              boxShadow: 'var(--shadow-xl)',
              border: '1px solid rgba(255,255,255,0.1)'
           }}>
-            <img src="/profile.jpg" alt="Tabe Kervine Tembi" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src="./profile.jpg" alt="Tabe Kervine Tembi" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
         </motion.div>
       </div>
