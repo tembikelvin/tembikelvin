@@ -49,6 +49,7 @@ export default function Navbar() {
           <a href="#experience" className="nav-link">Experience</a>
           <a href="#work" className="nav-link">Work</a>
           <a href="#referrals" className="nav-link">Referrals</a>
+          <a href="#contact" className="nav-link">Contact</a>
           <a href="/admin" className="nav-link" style={{ color: 'var(--text-muted)' }}>Login</a>
         </div>
       </div>

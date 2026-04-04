@@ -6,6 +6,8 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Testimonials from './components/Testimonials';
 import InteractiveGateway from './components/InteractiveGateway';
+import Contact from './components/Contact';
+import contactInfo from './content/site/contact.json';
 import './index.css';
 
 function App() {
@@ -36,13 +38,14 @@ function App() {
         <Experience />
         <Projects />
         <Testimonials />
+        <Contact />
       </InteractiveGateway>
       
       <footer style={{ background: 'var(--surface-elevated)', padding: '4rem 0', borderTop: '1px solid var(--border-color)', textAlign: 'center', marginTop: '4rem' }}>
         <div className="container">
           <h2 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '1rem' }}>Let's build something amazing together.</h2>
           <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>Ready to elevate your digital presence?</p>
-          <a href="mailto:hello@example.com" className="btn btn-primary">Get in Touch</a>
+          <a href="#contact" className="btn btn-primary">Get in Touch</a>
           <br/>
           <span style={{ display: 'inline-block', marginTop: '4rem', fontSize: '0.875rem', color: 'var(--text-muted)' }}>
             &copy; {new Date().getFullYear()} Tabe Kervine Tembi. All rights reserved.

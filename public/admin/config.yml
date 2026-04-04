@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: tembikelvin/tembikelvin
+  repo: tembikelvin/tembikelvin.github.io
   branch: main 
   site_domain: tembikelvin.github.io
 
@@ -10,9 +10,34 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
+  - name: "experience"
+    label: "Experience"
+    folder: "src/content/experience"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - {label: "Company", name: "company", widget: "string"}
+      - {label: "Role", name: "role", widget: "string"}
+      - {label: "Interval", name: "interval", widget: "string", hint: "e.g. Jul 2023 - Present"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Order", name: "order", widget: "number", default: 0, hint: "Higher number shows first"}
+
+  - name: "site_info"
+    label: "Site Information"
+    files:
+      - label: "Contact Details"
+        name: "contact"
+        file: "src/content/site/contact.json"
+        fields:
+          - {label: "Phone Number", name: "phone", widget: "string"}
+          - {label: "Email Address", name: "email", widget: "string"}
+          - {label: "Location", name: "location", widget: "string", required: false}
+
   - name: "projects"
     label: "Projects"
-    folder: "public/content/projects"
+    folder: "src/content/projects"
     create: true
     extension: "json"
     format: "json"
@@ -25,7 +50,7 @@ collections:
 
   - name: "testimonials"
     label: "Referrals & Testimonials"
-    folder: "public/content/testimonials"
+    folder: "src/content/testimonials"
     create: true
     extension: "json"
     format: "json"

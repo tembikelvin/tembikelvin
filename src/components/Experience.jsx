@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
 
+const experienceFiles = import.meta.glob('../content/experience/*.json', { eager: true });
+const experiences = Object.values(experienceFiles)
+  .sort((a, b) => b.order - a.order);
+
 const skills = [
   { category: 'Frontend', items: ['React', 'JavaScript', 'HTML5', 'CSS3'] },
   { category: 'Backend & Data', items: ['Node.js', 'PHP', 'Python', 'SQL', 'MySQL', 'MongoDB'] },
@@ -21,19 +25,24 @@ export default function Experience() {
           <h2 className="heading-lg">Experience</h2>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', marginTop: '3rem' }}>
-            <div style={{ position: 'relative', paddingLeft: '2rem', borderLeft: '2px solid var(--border-color)' }}>
-              <div style={{ position: 'absolute', left: '-7px', top: '0', width: '12px', height: '12px', borderRadius: '50%', background: 'var(--primary)' }}></div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 700 }}>Afritech Bamenda</h3>
-              <p style={{ color: 'var(--primary)', fontWeight: 600, fontSize: '0.9rem', marginBottom: '0.5rem' }}>Volunteer | Jul 2023 - Present</p>
-              <p style={{ color: 'var(--text-muted)' }}>Assisted in web development using PHP & JavaScript. Improved system performance via optimization and integrated API endpoints.</p>
-            </div>
-
-            <div style={{ position: 'relative', paddingLeft: '2rem', borderLeft: '2px solid var(--border-color)' }}>
-              <div style={{ position: 'absolute', left: '-7px', top: '0', width: '12px', height: '12px', borderRadius: '50%', background: 'var(--text-muted)' }}></div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 700 }}>Zenera Technology</h3>
-              <p style={{ color: 'var(--primary)', fontWeight: 600, fontSize: '0.9rem', marginBottom: '0.5rem' }}>Intern | Jun 2021 - 2022</p>
-              <p style={{ color: 'var(--text-muted)' }}>Developed and maintained full-stack applications. Provided hardware troubleshooting and server configurations.</p>
-            </div>
+             {experiences.map((exp, idx) => (
+                <div key={idx} style={{ position: 'relative', paddingLeft: '2rem', borderLeft: '2px solid var(--border-color)' }}>
+                  <div style={{ 
+                    position: 'absolute', 
+                    left: '-7px', 
+                    top: '0', 
+                    width: '12px', 
+                    height: '12px', 
+                    borderRadius: '50%', 
+                    background: idx === 0 ? 'var(--primary)' : 'var(--text-muted)' 
+                  }}></div>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700 }}>{exp.company}</h3>
+                  <p style={{ color: 'var(--primary)', fontWeight: 600, fontSize: '0.9rem', marginBottom: '0.5rem' }}>
+                    {exp.role} | {exp.interval}
+                  </p>
+                  <p style={{ color: 'var(--text-muted)' }}>{exp.description}</p>
+                </div>
+             ))}
           </div>
         </motion.div>
 
