@@ -1,16 +1,25 @@
-# React + Vite
+# Tabe Kervine - Full-Stack & Cybersecurity Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the central repository for my personal developer portfolio. Built for sheer performance and cutting-edge aesthetics, the site leverages top-tier modern web technologies, parallax dynamics, and a fully robust backend-less architecture.
 
-Currently, two official plugins are available:
+## 🚀 Live Site
+**[View My Portfolio](https://tembikelvin.github.io/tembikelvin/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Technology Stack
+- **Core Framework:** React + Vite (for high-performance localized bundling)
+- **Advanced Styling:** Custom Vanilla CSS mapping responsive scalability, glassmorphism UI tokens, and dynamic system dark-mode.
+- **Visual Animations:** `framer-motion` (Scroll progress lines, drag-to-unlock gateways, robust parallax image tracking) & `react-tsparticles` (Cyber-node interactive network background canvas).
+- **Headless CMS Backend:** Decap CMS (Git-based JSON content generation)
+- **CI/CD Pipeline:** Fully configured GitHub Actions deploying zero-downtime builds asynchronously to GitHub Pages.
 
-## React Compiler
+## 🎯 Architecture & Features
+- **Cybersecurity Drag-to-Unlock Gateway:** Leveraging state-driven physics models, a customized security perimeter requires real-world physical unlocking actions to cascade visitors into the `Projects` and `Experience` sections, simulating an encrypted collaboration channel.
+- **Real-Time Data Parsing:** Component structures dynamically map CV-parsed variables, meaning UI elements gracefully load out modular arrays.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📚 Managing Data Configurations
+This application utilizes a completely headless, Git-based infrastructure via Decap HTML/JSON collections. This bypasses the need for high-cost databases while maintaining immense scalability.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Editing Content (Projects, Testimonials, Mentions):**
+1. Navigate to the live `/admin` route: [`https://tembikelvin.github.io/tembikelvin/admin`](https://tembikelvin.github.io/tembikelvin/admin)
+2. Authenticate using the configured OAuth platform handler.
+3. Modify collections intuitively inside the visual UI. When standard files are saved, the backend explicitly commits data changes securely into this `.json` tree, immediately firing the automated deployment CI/CD engine!
