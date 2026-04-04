@@ -14,35 +14,42 @@ export default function Hero() {
       <div className="container" style={{ position: 'relative', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '4rem' }}>
         
         {/* Left Side: Text */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          style={{ y: yText, opacity, flex: '1 1 500px' }}
-        >
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', padding: '0.5rem 1rem', background: 'var(--surface-elevated)', borderRadius: '999px', marginBottom: '2rem', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-sm)' }}>
-            <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#10b981' }}></span>
-            <span style={{ fontSize: '0.875rem', fontWeight: 500 }}>Full-Stack Developer & Cybersecurity Specialist</span>
-          </div>
+        <motion.div style={{ flex: '1 1 500px', y: yText }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            style={{ opacity }}
+          >
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', padding: '0.5rem 1rem', background: 'var(--surface-elevated)', borderRadius: '999px', marginBottom: '2rem', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-sm)' }}>
+              <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#10b981' }}></span>
+              <span style={{ fontSize: '0.875rem', fontWeight: 500 }}>Full-Stack Developer & Cybersecurity Specialist</span>
+            </div>
+            
+            <h1 className="heading-xl">
+              Hi, I'm Tabe Kervine.<br/>
+              I build <span className="text-gradient">secure applications.</span>
+              <span className="cursor-blink">_</span>
+            </h1>
+            
+            <p className="text-lead">
+              I am a Software Engineer experienced in <strong>React, Node.js, PHP, and Python</strong>. From creating robust E-Commerce platforms to integrating third-party APIs and conducting vulnerability assessments—I bridge the gap between design, performance, and security.
+            </p>
+          </motion.div>
           
-          <h1 className="heading-xl">
-            Hi, I'm Tabe Kervine.<br/>
-            I build <span className="text-gradient">secure applications.</span>
-            <span className="cursor-blink">_</span>
-          </h1>
-          
-          <p className="text-lead">
-            I am a Software Engineer experienced in <strong>React, Node.js, PHP, and Python</strong>. From creating robust E-Commerce platforms to integrating third-party APIs and conducting vulnerability assessments—I bridge the gap between design, performance, and security.
-          </p>
-          
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
+          >
             <a href="#work" className="btn btn-primary">
               View My Work <ArrowRight size={20} />
             </a>
             <a href="/Tabe%20Kervine%20Tembi%20CV.pdf" download className="btn btn-secondary">
               Download CV <Download size={20} />
             </a>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Right Side: Image Parallax */}
