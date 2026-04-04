@@ -4,8 +4,8 @@ import HeroParticles from './HeroParticles';
 
 export default function Hero() {
   const { scrollY } = useScroll();
-  const yText = useTransform(scrollY, [0, 500], [0, 150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const yText = useTransform(scrollY, [0, 500], [0, 80]);
+  const opacity = useTransform(scrollY, [0, 400], [1, 0.2]); // Don't fade out completely
   const yImage = useTransform(scrollY, [0, 800], [0, -100]);
 
   return (
