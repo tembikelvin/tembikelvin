@@ -16,10 +16,14 @@ export default function Hero({ isUnlocked, onWorkClick }) {
   };
 
   return (
-    <section className="section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '120px', position: 'relative' }}>
+    <section className="section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: 'clamp(80px, 15vh, 120px)', position: 'relative' }}>
       <HeroParticles />
-      <div className="container" style={{ position: 'relative', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '4rem' }}>
-        
+      <div className="container hero-content" style={{ 
+        position: 'relative', 
+        zIndex: 10, 
+        flexWrap: 'wrap', 
+        gap: '2.5rem'
+      }}>        
         {/* Left Side: Text */}
         <motion.div style={{ flex: '1 1 500px', y: yText }}>
           <motion.div 
@@ -48,7 +52,7 @@ export default function Hero({ isUnlocked, onWorkClick }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
+            style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}
           >
             <a href="#work" onClick={handleWorkClick} className="btn btn-primary">
               View My Work <ArrowRight size={20} />
@@ -66,9 +70,10 @@ export default function Hero({ isUnlocked, onWorkClick }) {
            transition={{ delay: 0.2, duration: 1 }}
            style={{
              y: yImage,
-             flex: '1 1 400px',
+             flex: '0 1 400px',
              position: 'relative',
-             maxWidth: '450px'
+             maxWidth: '100%',
+             width: 'min(450px, 100%)'
            }}
         >
           {/* Decorative Blur */}
