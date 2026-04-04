@@ -1,0 +1,38 @@
+backend:
+  name: github
+  repo: tembikelvin/tembikelvin
+  branch: main 
+  site_domain: tembikelvin.github.io
+
+local_backend: false
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "public/content/projects"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Link", name: "link", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+
+  - name: "testimonials"
+    label: "Referrals & Testimonials"
+    folder: "public/content/testimonials"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Company", name: "company", widget: "string"}
+      - {label: "Text", name: "text", widget: "text"}
+      - {label: "YouTube Video ID", name: "videoId", widget: "string", required: false}
+      - {label: "Profile Image", name: "image", widget: "image"}
